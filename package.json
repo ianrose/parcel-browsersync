@@ -1,0 +1,40 @@
+{
+  "name": "parcel-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel watch ./src/index.html --no-hmr --public-url ./ & npm run browsersync",
+    "parcel-test": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "fix": "eslint \"src/*.js\" --fix && stylelint \"src/*.scss\" --fix",
+    "eslint": "eslint \"src/*.js\"",
+    "stylelint": "stylelint \"src/*.scss\"",
+    "lint": "npm run eslint && npm run stylelint",
+    "precommit": "lint-staged",
+    "browsersync": "node browsersync.js"
+  },
+  "lint-staged": {
+    "*.scss": "stylelint",
+    "*.js": "eslint"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.21.0",
+    "eslint": "^4.14.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "node-sass": "^4.7.2",
+    "parcel-bundler": "^1.4.1",
+    "standard": "^10.0.3",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0"
+  },
+  "dependencies": {
+    "d3": "^4.12.0"
+  }
+}
